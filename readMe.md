@@ -312,7 +312,7 @@ public class JavaTypes {
          * long takes 8 bytes of memory - values range is [-2B,2B]
          * float takes 4 bytes of memory - values range is [-2B,2B]
          * double takes 8 bytes of memory - values range is [-2B,2B]
-         * char takes 4 bytes of memory
+         * char takes 2 bytes of memory
          * boolean takes 1 byte of memory
          */
 
