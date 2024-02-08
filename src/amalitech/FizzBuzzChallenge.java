@@ -16,7 +16,7 @@ public class FizzBuzzChallenge {
             boolean fizz = input % 5 == 0;
             boolean buzz = input %3 == 0;
             // print statements
-            if(fizz && buzz) System.out.println("Fizz");
+            if(fizz && buzz) System.out.println("FizzBuzz");
             else if (fizz) System.out.println("Fizz");
             else if (buzz) System.out.println("Buzz");
             else System.out.println(input);
