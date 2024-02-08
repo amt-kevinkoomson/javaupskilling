@@ -4,64 +4,44 @@ import java.util.Scanner;
 
 public class FizzBuzzChallenge {
     public static void main(String...args){
-
-        Scanner scanner=new Scanner(System.in);
-        //Example #1: What specific problem are in this code?
-        System.out.println("Number:");
-        int number=scanner.nextInt();
-
-        if(number%5==0){
-            System.out.println("Fizz");
-
-        }else if(number%3==0){
-            System.out.println("Buzz");
-        }else if(number%5==0 && number%3==0){
-            System.out.println("FizzBuzz");
-
-        }else{
-            System.out.println(number);
+        // create a method to accept a value
+        // main method:
+        // begin while loop, condition, while input is not zero
+        // if input is not an integer, prompt to enter a valid integer and rerun input method
+        // store modulo 3 and 5
+        // evaluate checks to print fizz buzz or number
+        Integer input = getIntegerOrExit();
+        while (input != null){
+            // perform calculations
+            boolean fizz = input % 5 == 0;
+            boolean buzz = input %3 == 0;
+            // print statements
+            if(fizz && buzz) System.out.println("Fizz");
+            else if (fizz) System.out.println("Fizz");
+            else if (buzz) System.out.println("Buzz");
+            else System.out.println(input);
+            // get input again
+            input = getIntegerOrExit();
         }
-
-        //Example #2: How Can we improve this code?
-        //By placing most specific on top and most generic on bottom
-        //This block of code has a bitof repletion?
-        //Does this block of code has a flat structure without nesting? T
-        //This code is cleaner and easier to read?
-
-        System.out.println("Number:");
-        int numberTwo=scanner.nextInt();
-        if(numberTwo%5==0 && numberTwo%3==0){
-            System.out.println("FizzBuzz");
-        }else if(numberTwo%5==0){
-            System.out.println("Fizz");
-        }else if(numberTwo%3==0){
-            System.out.println("Buzz");
-
-        }else{
-            System.out.println(numberTwo);
     }
-
-    //Can we apply DRY- don’t repeat yourself principle??
-    System.out.println("Number:");
-    int numberThree=scanner.nextInt();
-        if(numberThree%5==0){
-            if(numberThree%3==0){
-                System.out.println("FizzBuzz");
-            }else
-                System.out.println("Fizz");
-
+    public static Integer getIntegerOrExit() {
+        // accept input
+        Scanner scanner=new Scanner(System.in);
+        int input;
+        System.out.println("Please enter an integer or 0 to exit: ");
+        // check if user input is an integer
+        if(scanner.hasNextInt()) {
+            input = scanner.nextInt();
+            if (input == 0) {
+                scanner.close();
+                System.exit(0);
+            }
+            return input;
+        } else {
+            System.out.println("Invalid input ");
+            return getIntegerOrExit();
+        }
     }
-        /*
-        We can remove this for to adhere to DRY principle
-        else if(numberThree%5==0){
-        System.out.println("Fizz");
-        */
-    else if(numberThree%3==0){
-        System.out.println("Buzz");
-
-    }else
-            System.out.println(numberThree);
-}
 }
 
 /**Note:
